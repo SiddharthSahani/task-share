@@ -13,7 +13,7 @@
 
 <Card>
 	<CardHeader
-		class={`flex-row items-center justify-between space-y-0 ${compactView ? 'py-2' : ''}`}
+		class={`flex-row items-center justify-between space-y-0 ${compactView ? 'py-4' : ''}`}
 	>
 		<CardTitle>
 			<Checkbox />

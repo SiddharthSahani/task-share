@@ -1,7 +1,8 @@
 <script lang="ts">
 	import TaskCard from '$lib/components/task-card.svelte';
+	import TaskList from '$lib/components/task-list.svelte';
 
-	const tasks: TTask[] = [
+	let tasks: TTask[] = [
 		{ title: 'task-1', description: 'some description', priortiy: 'Low', status: 'Todo' },
 		{
 			title: 'task-2',
@@ -17,12 +18,11 @@
 			status: 'Done'
 		}
 	];
+
+	tasks.push(...tasks);
+	tasks.push(...tasks);
 </script>
 
-{#each tasks as t}
-	<TaskCard task={t} compactView={true} />
-{/each}
-<hr class="p-6" />
-{#each tasks as t}
-	<TaskCard task={t} compactView={false} />
-{/each}
+<TaskList {tasks} compactView={false} />
+<hr class="py-4" />
+<TaskList {tasks} compactView={true} />
