@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Badge } from './ui/badge';
-	import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-	import { Checkbox } from './ui/checkbox';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 
 	interface Props {
 		task: TTask;
