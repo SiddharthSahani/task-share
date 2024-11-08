@@ -84,7 +84,7 @@
 	</Select>
 </div>
 
-<ScrollArea class="h-[calc(100vh-16rem)]">
+<ScrollArea class="h-[calc(100vh-12rem)]">
 	<div class="space-y-1">
 		{#each visibleTasks as task}
 			<TaskCard {task} {compactView} />
