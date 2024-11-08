@@ -23,7 +23,7 @@
 				if (sortFilter.sortBy === 'Priority') {
 					const map = { Low: 0, Medium: 1, High: 2 };
 					return (
-						(map[a.priortiy] - map[b.priortiy]) * (sortFilter.sortDirection === 'desc' ? -1 : 1)
+						(map[a.priority] - map[b.priority]) * (sortFilter.sortDirection === 'desc' ? -1 : 1)
 					);
 				} else {
 					const map = { 'In Progress': 1, Done: 0 };
@@ -84,7 +84,7 @@
 	</Select>
 </div>
 
-<ScrollArea class="h-[calc(100vh-28rem)]">
+<ScrollArea class="h-[calc(100vh-16rem)]">
 	<div class="space-y-1">
 		{#each visibleTasks as task}
 			<TaskCard {task} {compactView} />
