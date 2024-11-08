@@ -1,9 +1,8 @@
 <script lang="ts">
-	import TaskCard from '$lib/components/task-card.svelte';
 	import TaskList from '$lib/components/task-list.svelte';
 
-	let tasks: TTask[] = [
-		{ title: 'task-1', description: 'some description', priortiy: 'Low', status: 'Todo' },
+	const tasks: TTask[] = [
+		{ title: 'task-1', description: 'some description', priortiy: 'Low', status: 'In Progress' },
 		{
 			title: 'task-2',
 			description:
@@ -16,11 +15,14 @@
 			description: '',
 			priortiy: 'High',
 			status: 'Done'
+		},
+		{
+			title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			description: '',
+			priortiy: 'Low',
+			status: 'Done'
 		}
 	];
-
-	tasks.push(...tasks);
-	tasks.push(...tasks);
 </script>
 
 <TaskList {tasks} compactView={false} />

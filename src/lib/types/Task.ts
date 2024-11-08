@@ -2,5 +2,5 @@ type TTask = {
 	title: string;
 	description: string;
 	priortiy: 'Low' | 'Medium' | 'High';
-	status: 'Todo' | 'In Progress' | 'Done';
+	status: 'In Progress' | 'Done';
 };
