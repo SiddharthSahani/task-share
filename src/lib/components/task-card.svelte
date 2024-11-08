@@ -28,7 +28,7 @@
 			</Badge>
 			<Badge
 				variant="outline"
-				class={`${task.status === 'Done' ? 'bg-blue-100 text-blue-800' : task.priortiy === 'Medium' ? 'bg-purple-100 text-purple-800' : 'bg-grey-100 text-grey-800'}`}
+				class={`${task.status === 'Done' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'}`}
 			>
 				{task.status}
 			</Badge>
