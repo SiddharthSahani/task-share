@@ -15,8 +15,8 @@
 	<CardHeader
 		class={`flex-row items-center justify-between space-y-0 ${compactView ? 'py-4' : ''}`}
 	>
-		<CardTitle>
-			<Checkbox />
+		<CardTitle class="">
+			<Checkbox class="mr-1 size-5" />
 			{task.title}
 		</CardTitle>
 		<div class="flex items-center gap-2">
