@@ -20,14 +20,20 @@
 		tasks
 			.filter((task) => sortFilter.statusFilter.includes(task.status))
 			.sort((a, b) => {
+				const priorityMap = { Low: 0, Medium: 1, High: 2 };
+				const statusMap = { 'In Progress': 1, Done: 0 };
 				if (sortFilter.sortBy === 'Priority') {
-					const map = { Low: 0, Medium: 1, High: 2 };
 					return (
-						(map[a.priority] - map[b.priority]) * (sortFilter.sortDirection === 'desc' ? -1 : 1)
+						(priorityMap[a.priority] - priorityMap[b.priority]) *
+							(sortFilter.sortDirection === 'desc' ? -10 : 10) +
+						-(statusMap[a.status] - statusMap[b.status])
 					);
 				} else {
-					const map = { 'In Progress': 1, Done: 0 };
-					return (map[a.status] - map[b.status]) * (sortFilter.sortDirection === 'desc' ? -1 : 1);
+					return (
+						(statusMap[a.status] - statusMap[b.status]) *
+							(sortFilter.sortDirection === 'desc' ? -10 : 10) +
+						-(priorityMap[a.priority] - priorityMap[b.priority])
+					);
 				}
 			})
 	);
