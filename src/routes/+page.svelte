@@ -75,4 +75,6 @@
 		Toggle Compact View
 	</button>
 </div>
-<TaskList {tasks} {compactView} />
+<div class="mx-8">
+	<TaskList {tasks} {compactView} />
+</div>
