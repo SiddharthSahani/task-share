@@ -5,11 +5,11 @@
 	import { SortAsc, SortDesc } from 'lucide-svelte';
 
 	interface Props {
-		tasks: TTask[];
+		taskList: TTaskList;
 		compactView?: boolean;
 	}
 
-	let { tasks, compactView }: Props = $props();
+	let { taskList, compactView }: Props = $props();
 	const sortFilter = $state({
 		sortBy: 'Priority',
 		sortDirection: 'desc',
@@ -17,7 +17,7 @@
 	});
 
 	const visibleTasks = $derived(
-		tasks
+		taskList.tasks
 			.filter((task) => sortFilter.statusFilter.includes(task.status))
 			.sort((a, b) => {
 				const priorityMap = { Low: 0, Medium: 1, High: 2 };
