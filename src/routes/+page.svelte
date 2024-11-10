@@ -1,8 +1,7 @@
 <script lang="ts">
+	import PropertyBar from '$lib/components/property-bar.svelte';
 	import TaskList from '$lib/components/task-list.svelte';
 	import { SunMoonIcon } from 'lucide-svelte';
-
-	let compactView = false;
 
 	const taskList: TTaskList = {
 		name: 'Testing List',
@@ -62,9 +61,12 @@
 			}
 		]
 	};
+
+	let compactView = false;
+	let isPropertyBarExpanded = true;
 </script>
 
-<div class="flex justify-center gap-8 pt-4">
+<div class="flex justify-center gap-8 py-4">
 	<button
 		class="flex items-center rounded-md border-[1.5px] border-black bg-slate-100 px-4 dark:border-white dark:bg-slate-900"
 		on:click={() => document.documentElement.classList.toggle('dark')}
@@ -78,7 +80,14 @@
 	>
 		Toggle Compact View
 	</button>
+	<button
+		class="rounded-md border-[1.5px] border-black bg-slate-100 px-4 dark:border-white dark:bg-slate-900"
+		on:click={() => (isPropertyBarExpanded = !isPropertyBarExpanded)}
+	>
+		Toggle Property Bar
+	</button>
 </div>
-<div class="mx-8">
+<div class="mx-2 flex gap-2 rounded-xl border-2 p-1">
 	<TaskList {taskList} {compactView} />
+	<PropertyBar isExpanded={isPropertyBarExpanded} />
 </div>
