@@ -1,6 +1,6 @@
 
 type TTaskList = {
-    name: string;
-    public: boolean;
-    tasks: TTask[];
+	name: string;
+	public: boolean;
+	tasks: TTask[];
 };
