@@ -1,4 +1,3 @@
-
 type TTaskList = {
 	name: string;
 	public: boolean;
