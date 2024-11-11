@@ -87,7 +87,7 @@
 		Toggle Property Bar
 	</button>
 </div>
-<div class="mx-2 flex gap-2 rounded-xl border-2 p-1">
+<div class="mx-3 flex gap-2 rounded-xl border-2">
 	<TaskList {taskList} {compactView} />
-	<PropertyBar isExpanded={isPropertyBarExpanded} />
+	<PropertyBar isExpanded={isPropertyBarExpanded} {taskList} />
 </div>
