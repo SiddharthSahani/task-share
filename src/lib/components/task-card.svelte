@@ -15,7 +15,7 @@
 	<CardHeader
 		class={`flex-row items-center justify-between space-y-0 ${compactView ? 'py-4' : ''}`}
 	>
-		<CardTitle class="">
+		<CardTitle>
 			<Checkbox class="mr-1 size-5" />
 			{task.title}
 		</CardTitle>
@@ -34,13 +34,15 @@
 			</Badge>
 		</div>
 	</CardHeader>
-	{#if !compactView}
-		<CardContent class="px-12 pb-2 pt-1 text-sm text-gray-800 dark:text-gray-400">
-			{#if task.description}
-				{task.description}
-			{:else}
-				<i class="opacity-60">No description</i>
-			{/if}
-		</CardContent>
-	{/if}
+	<div class={`transition-height ${compactView ? 'h-0' : 'h-8'}`}>
+		{#if !compactView}
+			<CardContent class="px-12 pb-2 pt-1 text-sm text-gray-800 dark:text-gray-400">
+				{#if task.description}
+					{task.description}
+				{:else}
+					<i class="opacity-60">No description</i>
+				{/if}
+			</CardContent>
+		{/if}
+	</div>
 </Card>
