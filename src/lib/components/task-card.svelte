@@ -11,8 +11,8 @@
 	let { task, compactView = false }: Props = $props();
 </script>
 
-<Card>
-	<CardHeader class="flex-row items-center justify-between space-y-0 py-4">
+<Card class="flex flex-col gap-4 p-4">
+	<CardHeader class="flex-row items-center justify-between space-y-0 p-0">
 		<CardTitle>
 			<Checkbox class="mr-1 size-5" />
 			{task.title}
@@ -36,7 +36,7 @@
 	<div
 		class={`transition-all duration-500 ease-linear ${compactView ? 'max-h-0 opacity-0' : 'max-h-16 opacity-100'}`}
 	>
-		<CardContent class="-mt-2 p-0 px-12 pb-2 text-sm text-gray-800 dark:text-gray-400">
+		<CardContent class="p -mt-2 p-0 px-1 pb-2 text-sm text-gray-800 dark:text-gray-400">
 			{#if task.description}
 				{task.description}
 			{:else}
